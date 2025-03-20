@@ -21,6 +21,7 @@
     "pinia-plugin-persistedstate": "^4.2.0",
     "screenfull": "^6.0.2",
     "uuid": "^11.1.0",
+    "ve-footer": "^1.0.4",
     "ve-icon": "^1.0.5",
     "ve-justify": "^1.0.1",
     "ve-pagination": "^1.0.1",

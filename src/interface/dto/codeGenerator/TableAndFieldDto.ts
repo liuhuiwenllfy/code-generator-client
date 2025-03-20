@@ -20,4 +20,6 @@ export interface TableAndFieldDto{
     isShow: boolean
     isUpdateParam: boolean
     isVersion: boolean
+    uiType: string
+    dictGroup: string
 }

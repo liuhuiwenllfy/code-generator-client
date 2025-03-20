@@ -32,6 +32,6 @@ watch(() => commonStore.dark, () => {
 <style lang="scss" scoped>
 .page {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 56px);
 }
 </style>
