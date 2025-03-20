@@ -1,0 +1,49 @@
+//全局颜色
+@import "global-color";
+
+//边框线条
+@import "global-border";
+
+//字体
+@import "global-font-family";
+
+//文字大小
+@import "global-font-size";
+
+//行高
+@import "global-line-height";
+
+//滚动条
+@import "global-scrollbar";
+
+//一行省略
+.text-flow-ellipsis-multiple_1 {
+  /* 多余内容省略号处理-多行 */
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+//去掉浏览器 :focus 黑边
+:focus-visible {
+  outline: none;
+}
+
+.page {
+  height: calc(100vh - 102px);
+
+  .ve-table-search {
+    .el-select {
+      width: 200px
+    }
+  }
+
+  .pagination {
+    height: 52px;
+    line-height: 52px;
+    float: right;
+  }
+}

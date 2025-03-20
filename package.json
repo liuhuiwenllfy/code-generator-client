@@ -1,0 +1,48 @@
+{
+  "name": "element-plus-pro",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@volar/language-server": "2.4.11",
+    "@vue/language-server": "2.2.2",
+    "axios": "^1.7.9",
+    "element-plus": "^2.9.5",
+    "js-cookie": "^3.0.5",
+    "mitt": "^3.0.1",
+    "nprogress": "^0.2.0",
+    "pinia": "^3.0.1",
+    "pinia-plugin-persistedstate": "^4.2.0",
+    "screenfull": "^6.0.2",
+    "uuid": "^11.1.0",
+    "ve-icon": "^1.0.5",
+    "ve-justify": "^1.0.1",
+    "ve-pagination": "^1.0.1",
+    "ve-search-area": "^1.0.2",
+    "ve-table-area": "^1.0.2",
+    "ve-table-column": "^1.0.3",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.2.7",
+    "@iconify-json/clarity": "^1.2.2",
+    "@iconify-json/material-symbols": "^1.2.14",
+    "@types/node": "^22.13.5",
+    "@types/nprogress": "^0.2.3",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "sass": "^1.85.0",
+    "typescript": "^5.7.3",
+    "unplugin-auto-import": "^19.1.0",
+    "unplugin-icons": "^22.1.0",
+    "unplugin-vue-components": "^28.4.0",
+    "vite": "^6.1.1",
+    "vue-tsc": "^2.2.2"
+  }
+}
