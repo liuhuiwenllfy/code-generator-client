@@ -34,13 +34,13 @@ const handleCommand = (command: boolean) => {
             <el-icon style="font-size: 16px">
               <VeSunny/>
             </el-icon>
-            {{ $t('message.light') }}
+            白天
           </el-dropdown-item>
           <el-dropdown-item :command="true" :disabled="commonStore.dark">
             <el-icon style="font-size: 16px">
               <VeMdCloudyNight/>
             </el-icon>
-            {{ $t('message.dark') }}
+            黑夜
           </el-dropdown-item>
         </el-dropdown-menu>
       </template>

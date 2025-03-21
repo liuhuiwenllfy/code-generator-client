@@ -3,9 +3,12 @@ import TableArea from 've-table-area/index.vue'
 import TableColumn from 've-table-column/index.vue'
 import {tableHeight} from '@/assets/js/tableHeight'
 import {CirclePlus} from '@element-plus/icons-vue'
-import {computed, ref, watch} from 'vue'
+import {computed, onMounted, ref, watch} from 'vue'
 import {useCommonStore} from "@/pinia/common.ts";
 import {TableAndFieldVo} from "@/interface/vo/codeGenerator/TableAndFieldVo.ts";
+import {getUiTypeList} from "@/api/result/codeGenerator.ts";
+import {resData} from "@/interface/res.ts";
+import {UiTypeVo} from "@/interface/vo/codeGenerator/UiTypeVo.ts";
 
 const commonStore = useCommonStore();
 
@@ -48,6 +51,7 @@ const columnList = computed(() => [
     fixed: true,
     sortable: true,
     prop: 'columnName',
+    minWidth: 120,
     label: '字段名称'
   },
   {
@@ -55,6 +59,7 @@ const columnList = computed(() => [
     sortable: true,
     prop: 'columnComment',
     coverColumn: true,
+    minWidth: 120,
     label: '字段注释'
   },
   {
@@ -87,6 +92,20 @@ const columnList = computed(() => [
     coverColumn: true,
     label: '修改参数'
   },
+  {
+    sortable: true,
+    prop: 'uiType',
+    coverColumn: true,
+    minWidth: 120,
+    label: 'UI类型'
+  },
+  {
+    sortable: true,
+    prop: 'dictGroup',
+    coverColumn: true,
+    minWidth: 120,
+    label: '选择框字典分组'
+  },
 ])
 
 const emits = defineEmits(['onTableClick'])
@@ -117,6 +136,19 @@ const checkTableKey = ref<string>('')
 
 const checkTable = (tableKey: string) => {
   checkTableKey.value = tableKey
+}
+
+const _uiTypeList = ref<UiTypeVo[]>([])
+
+onMounted(()=>{
+  uiTypeList()
+})
+
+const uiTypeList = async () => {
+  const res = <resData>await getUiTypeList()
+  if (res.ok){
+    _uiTypeList.value = res.data
+  }
 }
 </script>
 
@@ -166,7 +198,7 @@ const checkTable = (tableKey: string) => {
                 @handle-full-screen="handleFullScreen"
                 @handle-refresh="handleRefresh">
               <template #columnComment="scope">
-                <el-input v-model="scope.row.columnComment" placeholder="请输入内容"/>
+                <el-input v-model="scope.row.columnComment" placeholder="请输入字段注释" clearable/>
               </template>
               <template #isCondition="scope">
                 <el-switch
@@ -202,6 +234,14 @@ const checkTable = (tableKey: string) => {
                     active-text="是"
                     inactive-text="否"
                     inline-prompt/>
+              </template>
+              <template #uiType="scope">
+                <el-select v-model="scope.row.uiType" placeholder="请选择UI类型" clearable>
+                  <el-option v-for="(item, index) in _uiTypeList" :key="index" :label="item.value" :value="item.key"/>
+                </el-select>
+              </template>
+              <template #dictGroup="scope">
+                <el-input v-model="scope.row.dictGroup" placeholder="请输入数据字典分组名称" clearable/>
               </template>
             </TableColumn>
           </el-table>

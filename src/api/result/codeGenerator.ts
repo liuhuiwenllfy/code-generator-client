@@ -33,3 +33,11 @@ export const getTableAndField = (data = {}) => {
 export const generateCode = (data = {}) => {
     return post(`/${api}/codegenerator/codeGenerator/generateCode`, data)
 }
+
+/**
+ * 获取UI类型
+ * @param params
+ */
+export const getUiTypeList = (params = {}) => {
+    return get(`/${api}/codegenerator/codeGenerator/getUiTypeList`, params)
+}

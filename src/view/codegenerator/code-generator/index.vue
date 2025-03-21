@@ -8,7 +8,7 @@ import Search from "@/view/codegenerator/code-generator/search/index.vue";
 import Table from "@/view/codegenerator/code-generator/table/index.vue";
 import {initTableHeight} from "@/assets/js/tableHeight.ts";
 import {GenerateCodeDto} from "@/interface/dto/codeGenerator/GenerateCodeDto.ts";
-import {ElMessageBox} from "element-plus";
+import {TableAndFieldDto} from "@/interface/dto/codeGenerator/TableAndFieldDto.ts";
 
 const pageRef = ref()
 const searchRef = ref()
@@ -29,7 +29,7 @@ const onReset = () => {
 const onTableClick = (type: any, rows: TableAndFieldVo[]) => {
   switch (type) {
     case 'generate':
-      _generatorData.value.tableAndFieldDtoList = rows
+      _generatorData.value.tableAndFieldDtoList = <TableAndFieldDto[]> rows
       onGenerate()
       break
     default:

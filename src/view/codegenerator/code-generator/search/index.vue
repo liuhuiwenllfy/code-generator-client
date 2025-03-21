@@ -229,10 +229,10 @@ watch(() => _data.value, () => {
         </el-form-item>
         <el-form-item prop="isGenerateTreeSelect">
           <template #label>
-            是否生成树结构
+            是否生成前端代码
           </template>
           <el-switch
-              v-model="_data.isGenerateTreeSelect"
+              v-model="_data.isGenerateVue"
               active-text="是"
               inactive-text="否"
               inline-prompt/>
