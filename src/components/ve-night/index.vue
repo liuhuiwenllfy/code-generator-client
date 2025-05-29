@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {VeMdCloudyNight, VeSunny, VeThemeLightDark} from 've-icon/components.ts'
+import {VeMdCloudyNight, VeSunny, VeThemeLightDark} from 've-icon/other/components.ts'
 import {onBeforeMount} from "vue";
 import {useCommonStore} from "@/pinia/common.ts";
 

@@ -5,7 +5,7 @@ import {createPinia} from 'pinia'
 import router from '@/router/index'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
-import * as SvgList from 've-icon/components'
+import * as SvgList from 've-icon/other/components'
 import 'element-plus/theme-chalk/el-message.css'
 import 'element-plus/theme-chalk/el-message-box.css'
 

@@ -6,12 +6,9 @@ import {CirclePlus, Delete, Document, Edit} from '@element-plus/icons-vue'
 import {computed, ref} from 'vue'
 import {ElMessage} from 'element-plus'
 import {CodeGeneratorParamsVo} from '@/interface/vo/codeGeneratorParams/codeGeneratorParamsVo.ts'
-import {useCommonStore} from "@/pinia/common.ts";
 import {createEmitter} from "@/assets/js/eventBus.ts";
 
 const emitter = createEmitter()
-
-const commonStore = useCommonStore();
 
 const props = defineProps({
   loading: {
